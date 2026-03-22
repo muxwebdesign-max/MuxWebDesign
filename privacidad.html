@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad | MuxWebDesign</title>
+    <meta name="description" content="Política de Privacidad de MuxWebDesign.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        :root {
+            var(--bg-base): #030305;
+            --bg-base: #030305;
+            --bg-surface: rgba(255, 255, 255, 0.03);
+            --bg-surface-hover: rgba(255, 255, 255, 0.06);
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent-main: #00ffcc; 
+            --accent-secondary: #0077ff; 
+            --border-color: rgba(255, 255, 255, 0.08);
+
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --container-padding: 2rem;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { background-color: var(--bg-base); color: var(--text-primary); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; position: relative; }
+
+        .cursor { position: fixed; top: 0; left: 0; width: 20px; height: 20px; border: 2px solid var(--accent-main); border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1), height 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s ease; z-index: 10000; mix-blend-mode: difference; }
+        .cursor.hover { width: 50px; height: 50px; background-color: rgba(0, 255, 204, 0.2); border-color: transparent; backdrop-filter: blur(2px); }
+
+        .bg-fx { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; overflow: hidden; pointer-events: none; background: radial-gradient(circle at 15% 50%, rgba(0, 255, 204, 0.04), transparent 50%), radial-gradient(circle at 85% 30%, rgba(0, 119, 255, 0.04), transparent 50%); }
+
+        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; line-height: 1.1; }
+        .text-gradient { background: linear-gradient(90deg, var(--accent-main), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 var(--container-padding); }
+        .grid { display: grid; }
+        
+        .navbar { position: fixed; top: 0; width: 100%; padding: 1.5rem 0; z-index: 1000; transition: all 0.4s ease; backdrop-filter: blur(16px); background: rgba(3, 3, 5, 0.8); border-bottom: 1px solid var(--border-color); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--text-primary); text-decoration: none; letter-spacing: -1px; }
+
+        /* Footer */
+        .footer { border-top: 1px solid var(--border-color); padding: 4rem 0 2rem; margin-top: 4rem; background: rgba(3, 3, 5, 0.5); }
+        .footer-grid { grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+        .social-links { display: flex; gap: 1rem; margin-top: 1.5rem; }
+        .social-links a { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; border-radius: 50%; background: var(--bg-surface); color: var(--text-primary); text-decoration: none; transition: all 0.3s ease; font-size: 1.2rem; }
+        .social-links a:hover { background: var(--accent-main); color: var(--bg-base); transform: translateY(-3px); }
+        .footer-bottom { text-align: center; color: var(--text-secondary); font-size: 0.9rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        /* Legal Content Styles */
+        .legal-page { padding-top: 160px; padding-bottom: 80px; max-width: 800px; margin: 0 auto; }
+        .legal-page h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+        .legal-updated { font-size: 0.95rem; color: var(--text-secondary); display: block; margin-bottom: 4rem; }
+        .legal-content h2 { font-size: 1.8rem; margin-top: 3rem; margin-bottom: 1rem; color: var(--text-primary); }
+        .legal-content p, .legal-content li { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 1.2rem; line-height: 1.8; }
+        .legal-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        
+        .btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 2.5rem; border-radius: 50px; font-family: var(--font-body); font-weight: 600; text-decoration: none; transition: all 0.4s; background: transparent; color: var(--text-primary); border: 1px solid var(--border-color); }
+        .btn-outline:hover { border-color: var(--accent-main); color: var(--accent-main); transform: translateY(-3px); }
+
+        @media (max-width: 900px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .bg-fx { display: none; }
+        }
+        @media (max-width: 768px) {
+            .cursor { display: none; }
+            * { cursor: auto !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor"></div>
+    <div class="bg-fx"></div>
+
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo interactive">Mux<span class="text-gradient">WebDesign</span></a>
+            <a href="index.html" class="btn-outline interactive"><i class="ri-arrow-left-line"></i> Volver a Inicio</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="legal-page">
+            <h1 class="text-gradient">Política de Privacidad</h1>
+            <span class="legal-updated">Última actualización: Marzo 2026</span>
+
+            <div class="legal-content">
+                <h2>1. Responsable del Tratamiento</h2>
+                <p>El responsable del tratamiento de los datos personales recabados a través de este Sitio Web es MuxWebDesign (en adelante, "la Agencia"). Puedes contactarnos para cualquier aspecto relacionado con esta política o tus datos personales a través del correo electrónico: privacidad@muxwebdesign.com.</p>
+
+                <h2>2. Finalidad del Tratamiento</h2>
+                <p>Los datos personales que nos proporciones a través de nuestros formularios de contacto o durante la contratación de nuestros servicios, serán utilizados exclusivamente para:</p>
+                <ul>
+                    <li>Gestionar y dar respuesta a tus consultas, dudas o solicitudes de presupuesto.</li>
+                    <li>Procesar, mantener y gestionar la relación contractual en caso de que decidas contratar nuestros servicios web o de marketing.</li>
+                    <li>Remitir comunicaciones comerciales y newsletters relacionadas con nuestro sector, única y exclusivamente si has dado tu consentimiento explícito para ello.</li>
+                </ul>
+
+                <h2>3. Legitimación y Conservación</h2>
+                <p>La base legal para el tratamiento de tus datos es el consentimiento expreso que otorgas al aceptar esta Política de Privacidad y enviarnos un formulario, así como la ejecución de un contrato en caso de prestación de servicios.</p>
+                <p>Tus datos se conservarán mientras se mantenga la relación comercial o durante el tiempo estrictamente necesario para cumplir con las obligaciones legales aplicables.</p>
+
+                <h2>4. Derechos ARCO</h2>
+                <p>Estás en tu derecho de obtener confirmación sobre si en MuxWebDesign estamos tratando datos personales que te conciernen. Puedes ejercer tus derechos de Acceso, Rectificación, Cancelación y Oposición (ARCO), así como la portabilidad y limitación del tratamiento. Para ello, envíanos un correo electrónico a privacidad@muxwebdesign.com adjuntando una copia de tu DNI o documento de identidad equivalente.</p>
+
+                <h2>5. Cesión a Terceros</h2>
+                <p>MuxWebDesign no cederá tus datos a terceros, salvo obligación legal expresa o cuando sea estrictamente necesario para la prestación del servicio (por ejemplo, proveedores de hosting o plataformas de pago), con quienes siempre mantendremos el correspondiente contrato de encargado de tratamiento para asegurar la máxima confidencialidad.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="grid footer-grid">
+                <div>
+                    <h2 class="logo mb-4">Mux<span class="text-gradient">WebDesign</span></h2>
+                    <p class="text-secondary" style="max-width: 300px; margin-bottom: 1.5rem;">Elevamos los estándares digitales. Diseñamos el futuro de tu marca, hoy.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/muxwebdesign/" target="_blank" rel="noopener noreferrer" class="interactive" aria-label="Instagram">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="interactive"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="interactive"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Navegación</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem;">
+                        <li><a href="index.html" style="color: var(--text-secondary); text-decoration: none;" class="interactive">Inicio</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Legal</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem;">
+                        <li><a href="privacidad.html" style="color: var(--accent-main); text-decoration: none;" class="interactive">Política de Privacidad</a></li>
+                        <li><a href="terminos.html" style="color: var(--text-secondary); text-decoration: none;" class="interactive">Términos de Servicio</a></li>
+                        <li><a href="cookies.html" style="color: var(--text-secondary); text-decoration: none;" class="interactive">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 MuxWebDesign. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.querySelector('.cursor');
+            const interactives = document.querySelectorAll('.interactive, a, button');
+            if (window.matchMedia("(pointer: fine)").matches) {
+                document.addEventListener('mousemove', (e) => {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
+                });
+                interactives.forEach(el => {
+                    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+                });
+            }
+        });
+    </script>
+</body>
+</html>
