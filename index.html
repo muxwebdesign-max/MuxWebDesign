@@ -792,21 +792,15 @@
 
             /* Mobile menu toggle would go here */
             .footer-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 2rem;
             }
-
-            .bg-fx {
-                display: none;
+            .footer-grid > div:first-child {
+                grid-column: 1 / -1;
+                margin-bottom: 2rem;
             }
 
-            /* Reduce background noise on mobile */
-            .global-grid-bg {
-                opacity: 0.3;
-            }
-            .data-stream {
-                display: none !important;
-            }
+
 
             /* Better performance on mobile */
 

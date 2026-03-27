@@ -64,8 +64,8 @@
         .btn-outline:hover { border-color: var(--accent-main); color: var(--accent-main); transform: translateY(-3px); }
 
         @media (max-width: 900px) {
-            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .bg-fx { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .footer-grid > div:first-child { grid-column: 1 / -1; margin-bottom: 2rem; }
         }
         @media (max-width: 768px) {
             .cursor { display: none; }
