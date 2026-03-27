@@ -81,7 +81,7 @@
             transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1),
                 height 0.3s cubic-bezier(0.19, 1, 0.22, 1),
                 background-color 0.3s ease;
-            z-index: 10000;
+            z-index: 999999;
             mix-blend-mode: difference;
         }
 
@@ -155,6 +155,7 @@
         .text-gradient {
             background: linear-gradient(90deg, var(--accent-main), var(--accent-secondary));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
         }
@@ -467,6 +468,35 @@
             color: inherit;
         }
 
+        .portfolio-link-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(3, 3, 5, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .portfolio-item:hover .portfolio-link-badge {
+            background: var(--accent-main);
+            color: var(--bg-base);
+            border-color: var(--accent-main);
+            box-shadow: 0 4px 20px rgba(0, 255, 204, 0.4);
+            transform: scale(1.05);
+        }
+
         .portfolio-img {
             width: 100%;
             height: 100%;
@@ -770,6 +800,14 @@
                 display: none;
             }
 
+            /* Reduce background noise on mobile */
+            .global-grid-bg {
+                opacity: 0.3;
+            }
+            .data-stream {
+                display: none !important;
+            }
+
             /* Better performance on mobile */
 
             .whatsapp-float {
@@ -991,6 +1029,7 @@
         .text-cyan-blue-gradient {
             background: linear-gradient(90deg, #00ffff, #0077ff);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
         }
@@ -1423,23 +1462,27 @@
         }
 
         @media (max-width: 900px) {
-            .scene-container {
-                opacity: 0.4;
+            /* Prevent Header wrapping and overlap */
+            .logo {
+                font-size: 1.3rem !important;
+                gap: 8px !important;
+            }
+            .logo span {
+                white-space: nowrap;
+            }
+            .btn-white-outline {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.9rem !important;
             }
 
+            /* Clean up background to reduce saturation */
+            .scene-container,
+            .sphere-cyan,
             .network-graph,
             .data-streams,
             .floating-icon,
             .bg-text {
-                display: none;
-            }
-
-            .sphere-cyan {
-                width: 120vw;
-                height: 120vw;
-                left: -20vw;
-                top: 5vh;
-                opacity: 0.5;
+                display: none !important;
             }
 
             .hero-btns {
@@ -1447,7 +1490,7 @@
             }
 
             .hero-premium-content {
-                padding-top: 120px;
+                padding-top: 180px; /* Increased from 120px to prevent overlap */
                 align-items: flex-start;
             }
 
@@ -1569,6 +1612,7 @@
             .text-cyan-green-gradient {
                 background: linear-gradient(90deg, #00ffff, #00ff80);
                 -webkit-background-clip: text;
+                background-clip: text;
                 -webkit-text-fill-color: transparent;
                 display: inline-block;
             }
@@ -1827,6 +1871,7 @@
             .sci-fi-title .neon-text {
                 background: linear-gradient(90deg, #00ffff, #0088ff);
                 -webkit-background-clip: text;
+                background-clip: text;
                 -webkit-text-fill-color: transparent;
                 text-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
             }
@@ -2237,6 +2282,7 @@
             <div class="grid portfolio-grid">
                 <!-- Item 1 (Actualizado: Tintorería Punto Sec) -->
                 <a href="https://puntosec.com" target="_blank" class="portfolio-item reveal interactive">
+                    <div class="portfolio-link-badge"><i class="ri-external-link-line"></i> Visitar Web</div>
                     <img src="puntosec_proyecto.png" alt="Punto Sec Tintorería Premium" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <div class="portfolio-tags">
@@ -2251,6 +2297,7 @@
 
                 <!-- Item 2 -->
                 <a href="#" class="portfolio-item reveal delay-100 interactive">
+                    <div class="portfolio-link-badge"><i class="ri-external-link-line"></i> Ver Proyecto</div>
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
                         alt="Dashboard App" class="portfolio-img">
                     <div class="portfolio-overlay">
@@ -2266,6 +2313,7 @@
 
                 <!-- Item 3 -->
                 <a href="#" class="portfolio-item reveal delay-200 interactive">
+                    <div class="portfolio-link-badge"><i class="ri-external-link-line"></i> Ver Proyecto</div>
                     <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=800&q=80"
                         alt="Branding Agency" class="portfolio-img">
                     <div class="portfolio-overlay">
